@@ -1,0 +1,323 @@
+# Python Programming Guide — RAG Corpus
+# Source: Public domain educational content on Python programming
+# Total: ~25 pages worth of content
+
+## Chapter 1: Introduction to Python
+
+Python is a high-level, interpreted programming language created by Guido van Rossum and first released in 1991. Python's design philosophy emphasizes code readability and simplicity, using significant indentation to define code blocks instead of curly braces.
+
+Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. It has a comprehensive standard library and a large ecosystem of third-party packages available through the Python Package Index (PyPI).
+
+Python is widely used in web development, data science, artificial intelligence, machine learning, automation, scripting, and scientific computing. Major companies like Google, Netflix, Instagram, Dropbox, and NASA use Python extensively.
+
+Python versions: Python 2 reached end-of-life in January 2020. Python 3 is the current supported version. Python 3 introduced several breaking changes from Python 2 including print as a function, integer division behavior, and Unicode strings by default.
+
+To install Python, visit python.org and download the latest version. On Windows, check "Add Python to PATH" during installation. On macOS, Python 3 can be installed via Homebrew using "brew install python". On Linux, use the system package manager such as "apt install python3" on Ubuntu.
+
+## Chapter 2: Variables and Data Types
+
+Variables in Python are created by assignment. Python uses dynamic typing, meaning you don't need to declare variable types explicitly. The interpreter infers the type from the value assigned.
+
+Basic data types in Python:
+- int: Integer numbers like 1, 42, -100
+- float: Floating point numbers like 3.14, 2.718, -0.5
+- str: Text strings like "hello", 'world', """multiline"""
+- bool: Boolean values True or False
+- NoneType: The None value representing absence of value
+- list: Ordered mutable sequences like [1, 2, 3]
+- tuple: Ordered immutable sequences like (1, 2, 3)
+- dict: Key-value mappings like {"name": "Alice", "age": 30}
+- set: Unordered collections of unique elements like {1, 2, 3}
+
+Type conversion functions: int(), float(), str(), bool(), list(), tuple(), dict(), set()
+
+The type() function returns the type of a variable. The isinstance() function checks if a variable is an instance of a type.
+
+Variable naming rules: must start with letter or underscore, can contain letters, digits, underscores, cannot be Python keywords, case-sensitive.
+
+Python keywords include: False, None, True, and, as, assert, async, await, break, class, continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, pass, raise, return, try, while, with, yield.
+
+## Chapter 3: Operators
+
+Arithmetic operators: + (addition), - (subtraction), * (multiplication), / (division), // (floor division), % (modulus), ** (exponentiation)
+
+Comparison operators: == (equal), != (not equal), < (less than), > (greater than), <= (less than or equal), >= (greater than or equal)
+
+Logical operators: and, or, not
+
+Assignment operators: =, +=, -=, *=, /=, //=, %=, **=
+
+Bitwise operators: & (AND), | (OR), ^ (XOR), ~ (NOT), << (left shift), >> (right shift)
+
+Identity operators: is, is not (check if two variables point to the same object)
+
+Membership operators: in, not in (check if value exists in sequence)
+
+Operator precedence (highest to lowest): parentheses, exponentiation, unary plus/minus/not, multiplication/division/floor division/modulus, addition/subtraction, bitwise shifts, bitwise AND, bitwise XOR, bitwise OR, comparison operators, logical not, logical and, logical or.
+
+## Chapter 4: Control Flow
+
+If statements control program flow based on conditions:
+if condition:
+    code block
+elif another_condition:
+    code block
+else:
+    code block
+
+Python uses indentation (4 spaces recommended) to define code blocks. Colons are required after if, elif, else, for, while, def, class statements.
+
+For loops iterate over sequences:
+for item in sequence:
+    code block
+
+The range() function generates sequences of numbers: range(stop), range(start, stop), range(start, stop, step)
+
+While loops repeat while a condition is true:
+while condition:
+    code block
+
+Break statement exits a loop immediately. Continue statement skips to the next iteration. Pass statement is a no-operation placeholder.
+
+The else clause on loops executes when the loop completes without a break.
+
+List comprehensions provide concise ways to create lists: [expression for item in iterable if condition]
+
+Dictionary comprehensions: {key: value for item in iterable}
+
+Set comprehensions: {expression for item in iterable}
+
+Generator expressions use parentheses: (expression for item in iterable)
+
+## Chapter 5: Functions
+
+Functions are defined using the def keyword:
+def function_name(parameters):
+    """Docstring"""
+    code block
+    return value
+
+Function parameters types:
+- Positional parameters: matched by position
+- Keyword parameters: matched by name
+- Default parameters: have default values def func(x, y=10)
+- *args: variable positional arguments (tuple)
+- **kwargs: variable keyword arguments (dict)
+
+Lambda functions are anonymous single-expression functions: lambda parameters: expression
+
+The return statement returns a value. Functions without return return None. Functions can return multiple values as tuples.
+
+Scope rules (LEGB): Local, Enclosing, Global, Built-in. The global keyword accesses global variables inside functions. The nonlocal keyword accesses enclosing scope variables.
+
+Decorators modify function behavior using the @ syntax. Common decorators: @staticmethod, @classmethod, @property.
+
+Built-in functions: print(), input(), len(), range(), type(), isinstance(), int(), float(), str(), list(), dict(), tuple(), set(), sorted(), reversed(), enumerate(), zip(), map(), filter(), sum(), min(), max(), abs(), round(), open().
+
+## Chapter 6: Lists and Tuples
+
+Lists are ordered, mutable sequences created with square brackets: my_list = [1, 2, 3]
+
+List methods: append(item), extend(iterable), insert(index, item), remove(item), pop(index), clear(), index(item), count(item), sort(), reverse(), copy()
+
+List slicing: list[start:stop:step]. Negative indices count from the end.
+
+Tuples are ordered, immutable sequences created with parentheses: my_tuple = (1, 2, 3)
+
+Tuple unpacking: a, b, c = (1, 2, 3)
+
+Named tuples from collections module provide named fields.
+
+The * operator unpacks sequences. The + operator concatenates sequences. The * operator repeats sequences.
+
+Sorting: sorted() returns new sorted list. list.sort() sorts in place. Key parameter specifies sort key. Reverse parameter reverses order.
+
+## Chapter 7: Dictionaries and Sets
+
+Dictionaries store key-value pairs. Keys must be immutable (strings, numbers, tuples).
+
+Dict methods: keys(), values(), items(), get(key, default), update(dict), pop(key), popitem(), clear(), copy(), setdefault(key, default)
+
+Dictionary access: dict[key] raises KeyError if missing. dict.get(key) returns None if missing.
+
+The collections module provides: defaultdict (default values), OrderedDict (insertion ordered), Counter (counting), namedtuple (named fields), deque (double-ended queue).
+
+Sets are unordered collections of unique elements: my_set = {1, 2, 3}
+
+Set operations: union (|), intersection (&), difference (-), symmetric difference (^)
+
+Set methods: add(), remove(), discard(), pop(), clear(), union(), intersection(), difference(), issubset(), issuperset()
+
+Frozen sets are immutable sets: frozenset()
+
+## Chapter 8: Strings
+
+Strings are immutable sequences of Unicode characters.
+
+String creation: single quotes, double quotes, triple quotes for multiline.
+
+String methods: upper(), lower(), title(), capitalize(), strip(), lstrip(), rstrip(), split(), join(), replace(), find(), index(), count(), startswith(), endswith(), format(), encode(), decode()
+
+f-strings (formatted string literals): f"Hello {name}, you are {age} years old"
+
+String formatting with .format(): "Hello {}".format(name)
+
+String operations: + concatenation, * repetition, in membership test, len() length
+
+Regular expressions via re module: re.match(), re.search(), re.findall(), re.sub(), re.split()
+
+Raw strings with r prefix ignore escape sequences: r"\n is not a newline"
+
+Bytes literals with b prefix: b"hello"
+
+## Chapter 9: File Handling
+
+Opening files: open(filename, mode) where mode is 'r' (read), 'w' (write), 'a' (append), 'b' (binary), 'x' (exclusive creation)
+
+Context manager with statement ensures file is closed: with open('file.txt', 'r') as f:
+
+File methods: read(), readline(), readlines(), write(), writelines(), seek(), tell(), close()
+
+The os module provides file system operations: os.path.exists(), os.path.join(), os.getcwd(), os.listdir(), os.mkdir(), os.remove(), os.rename()
+
+The pathlib module provides object-oriented file paths: Path('file.txt').read_text()
+
+CSV files: csv module with csv.reader() and csv.writer()
+
+JSON files: json module with json.load(), json.dump(), json.loads(), json.dumps()
+
+## Chapter 10: Object-Oriented Programming
+
+Classes define objects with attributes and methods:
+class ClassName(ParentClass):
+    def __init__(self, parameters):
+        self.attribute = value
+    def method(self):
+        pass
+
+Special methods (dunder methods): __init__, __str__, __repr__, __len__, __eq__, __lt__, __add__, __getitem__, __setitem__, __iter__, __next__, __enter__, __exit__
+
+Inheritance allows classes to inherit from parent classes. Multiple inheritance is supported.
+
+Encapsulation: attributes prefixed with _ are private by convention. __ prefix triggers name mangling.
+
+Polymorphism: same method name behaves differently in different classes.
+
+Class methods use @classmethod decorator. Static methods use @staticmethod decorator. Properties use @property decorator.
+
+Abstract classes from abc module: from abc import ABC, abstractmethod
+
+## Chapter 11: Error Handling
+
+Exceptions are errors that occur during execution.
+
+Try-except blocks handle exceptions:
+try:
+    risky code
+except ExceptionType as e:
+    handle error
+else:
+    runs if no exception
+finally:
+    always runs
+
+Common exceptions: ValueError, TypeError, KeyError, IndexError, AttributeError, FileNotFoundError, ZeroDivisionError, ImportError, StopIteration, RuntimeError
+
+Raising exceptions: raise ValueError("message")
+
+Custom exceptions by inheriting from Exception class.
+
+The assert statement tests conditions: assert condition, "error message"
+
+## Chapter 12: Modules and Packages
+
+Importing modules: import module, from module import name, from module import *
+
+Creating modules: any .py file is a module
+
+The __name__ variable equals "__main__" when run directly, module name when imported.
+
+Packages are directories with __init__.py files.
+
+Standard library highlights:
+- os: operating system interface
+- sys: system-specific parameters
+- math: mathematical functions
+- random: random number generation
+- datetime: date and time handling
+- collections: specialized data structures
+- itertools: iterator building blocks
+- functools: higher-order functions
+- re: regular expressions
+- json: JSON encoding/decoding
+- csv: CSV file reading/writing
+- pathlib: object-oriented file paths
+- threading: thread-based parallelism
+- multiprocessing: process-based parallelism
+- subprocess: subprocess management
+- socket: network interface
+- http: HTTP protocol
+- urllib: URL handling
+
+pip is Python's package installer. Install packages: pip install package_name. List packages: pip list. Requirements file: pip freeze > requirements.txt, pip install -r requirements.txt.
+
+Virtual environments isolate project dependencies: python -m venv env, source env/bin/activate (Mac/Linux), env\Scripts\activate (Windows).
+
+## Chapter 13: Iterators and Generators
+
+Iterators implement __iter__ and __next__ methods. The iter() function returns an iterator. The next() function gets the next item.
+
+Generators use yield to produce values lazily:
+def generator():
+    yield value
+
+Generator expressions: (expression for item in iterable)
+
+The itertools module provides: chain(), cycle(), repeat(), count(), islice(), product(), permutations(), combinations()
+
+## Chapter 14: Functional Programming
+
+Map applies function to each element: map(function, iterable)
+
+Filter selects elements: filter(function, iterable)
+
+Reduce applies function cumulatively: from functools import reduce; reduce(function, iterable)
+
+Lambda functions: lambda x: x * 2
+
+Closures are functions that remember enclosing scope variables.
+
+Decorators wrap functions to add behavior.
+
+The functools module: partial(), wraps(), lru_cache(), cached_property()
+
+## Chapter 15: Python Best Practices
+
+PEP 8 is the style guide for Python code:
+- Use 4 spaces for indentation
+- Limit lines to 79 characters
+- Use blank lines to separate functions and classes
+- Use docstrings for all public modules, functions, classes, methods
+- Use snake_case for variables and functions
+- Use CamelCase for class names
+- Use UPPER_CASE for constants
+
+Type hints provide optional static typing: def greet(name: str) -> str:
+
+The typing module provides: List, Dict, Tuple, Optional, Union, Any, Callable
+
+Testing with unittest: import unittest; class TestCase(unittest.TestCase)
+
+Testing with pytest: simpler syntax, more features, widely used
+
+Debugging: print statements, logging module, pdb debugger, IDE debuggers
+
+Profiling: cProfile module, timeit module
+
+Documentation: docstrings, Sphinx for generating docs
+
+Virtual environments: venv, conda, pipenv, poetry
+
+Code quality: pylint, flake8, black formatter, isort for imports
+
+Version control with Git is essential for Python projects.
